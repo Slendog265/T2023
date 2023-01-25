@@ -5,10 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ListMonth extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -19,6 +22,7 @@ public class ListMonth extends JFrame {
 				try {
 					ListMonth frame = new ListMonth();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,6 +40,27 @@ public class ListMonth extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+			},
+			new String[] {
+				"ID", "Nombres", "Apellidos", "Salario Minimo"
+			}
+		));
+		table.getColumnModel().getColumn(1).setPreferredWidth(162);
+		table.getColumnModel().getColumn(2).setPreferredWidth(127);
+		table.getColumnModel().getColumn(3).setPreferredWidth(155);
+		table.setBounds(10, 11, 391, 239);
+		contentPane.add(table);
 	}
 
 }
