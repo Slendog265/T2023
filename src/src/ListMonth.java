@@ -11,7 +11,6 @@ import javax.swing.table.DefaultTableModel;
 public class ListMonth extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -41,26 +40,5 @@ public class ListMonth extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
-			new String[] {
-				"ID", "Nombres", "Apellidos", "Salario Minimo"
-			}
-		));
-		table.getColumnModel().getColumn(1).setPreferredWidth(162);
-		table.getColumnModel().getColumn(2).setPreferredWidth(127);
-		table.getColumnModel().getColumn(3).setPreferredWidth(155);
-		table.setBounds(10, 11, 391, 239);
-		contentPane.add(table);
 	}
-
 }
