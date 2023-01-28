@@ -107,6 +107,14 @@ public class ListHour extends JFrame implements ActionListener {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblNewLabel.setBounds(344, 11, 671, 41);
 		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton_2 = new JButton("⬅");
+		btnNewButton_2.setBounds(10, 11, 58, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_2_1 = new JButton("Salir");
+		btnNewButton_2_1.setBounds(955, 447, 84, 23);
+		contentPane.add(btnNewButton_2_1);
 	}
 	public void actionPerformed(ActionEvent e) {
 	}

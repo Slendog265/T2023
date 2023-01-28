@@ -82,8 +82,20 @@ public class DataMonth extends JFrame {
 		lblSalariomin.setBounds(22, 188, 92, 14);
 		contentPane.add(lblSalariomin);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(345, 238, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.setBounds(340, 227, 84, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnAbrirLista = new JButton("Abrir Lista");
+		btnAbrirLista.setBounds(130, 227, 126, 23);
+		contentPane.add(btnAbrirLista);
+		
+		JButton btnNewButton_1 = new JButton("Guardar");
+		btnNewButton_1.setBounds(10, 227, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2_1 = new JButton("⬅");
+		btnNewButton_2_1.setBounds(10, 11, 58, 23);
+		contentPane.add(btnNewButton_2_1);
 	}
 }

@@ -21,6 +21,8 @@ public class DataHour extends JFrame {
 	private JTextField textField_6;
 	private JButton btnAbrirLista;
 	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -115,12 +117,20 @@ public class DataHour extends JFrame {
 		contentPane.add(lblTarifaExtra);
 		
 		btnAbrirLista = new JButton("Abrir Lista");
-		btnAbrirLista.setBounds(298, 396, 126, 23);
+		btnAbrirLista.setBounds(130, 396, 126, 23);
 		contentPane.add(btnAbrirLista);
 		
 		btnNewButton_1 = new JButton("Guardar");
-		btnNewButton_1.setBounds(166, 396, 89, 23);
+		btnNewButton_1.setBounds(10, 396, 89, 23);
 		contentPane.add(btnNewButton_1);
+		
+		btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.setBounds(340, 396, 84, 23);
+		contentPane.add(btnNewButton_2);
+		
+		btnNewButton = new JButton("⬅");
+		btnNewButton.setBounds(10, 11, 58, 23);
+		contentPane.add(btnNewButton);
 	}
 
 }
