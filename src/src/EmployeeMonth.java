@@ -2,10 +2,12 @@ package src;
 
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class EmployeeMonth extends JFrame {
 
@@ -20,7 +22,6 @@ public class EmployeeMonth extends JFrame {
 				try {
 					EmployeeMonth frame = new EmployeeMonth();
 					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,7 +48,13 @@ public class EmployeeMonth extends JFrame {
 		contentPane_1.setBounds(0, 0, 434, 261);
 		contentPane.add(contentPane_1);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Mostrar Empleado por Mes");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListHour lh = new ListHour();
+				lh.setVisible(true);
+			}
+		});
 		btnNewButton_1.setBounds(33, 145, 369, 43);
 		contentPane_1.add(btnNewButton_1);
 		
@@ -55,12 +62,27 @@ public class EmployeeMonth extends JFrame {
 		button.setBounds(0, 11, 36, -3);
 		contentPane_1.add(button);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(10, 11, 45, 23);
+		JButton btnNewButton_2 = new JButton("Volver");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Principal p = new Principal();
+				p.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(10, 11, 72, 23);
 		contentPane_1.add(btnNewButton_2);
 		
-		JButton btnNewButton_1_1 = new JButton("New button");
+		JButton btnNewButton_1_1 = new JButton("Agregar Empleado por Mes");
+		btnNewButton_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DataMonth dm = new DataMonth();
+				dm.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_1_1.setBounds(33, 64, 369, 43);
 		contentPane_1.add(btnNewButton_1_1);
 	}
+
 }

@@ -1,14 +1,13 @@
 package src;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Principal extends JFrame implements ActionListener {
 
@@ -24,7 +23,6 @@ public class Principal extends JFrame implements ActionListener {
 				try {
 					Principal frame = new Principal();
 					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -45,7 +43,14 @@ public class Principal extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton(" Empleado por Mes");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EmployeeMonth em = new EmployeeMonth();
+				em.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_1.setBounds(33, 145, 369, 43);
 		contentPane.add(btnNewButton_1);
 		
@@ -53,11 +58,16 @@ public class Principal extends JFrame implements ActionListener {
 		button.setBounds(0, 11, 36, -3);
 		contentPane.add(button);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(10, 11, 45, 23);
+		JButton btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(EXIT_ON_CLOSE);
+			}
+		});
+		btnNewButton_2.setBounds(10, 11, 63, 23);
 		contentPane.add(btnNewButton_2);
 		
-		btnNewButton_1_1 = new JButton("New button");
+		btnNewButton_1_1 = new JButton("Empleado por Hora");
 		btnNewButton_1_1.addActionListener(this);
 		btnNewButton_1_1.setBounds(33, 64, 369, 43);
 		contentPane.add(btnNewButton_1_1);
@@ -68,5 +78,9 @@ public class Principal extends JFrame implements ActionListener {
 		}
 	}
 	protected void handleBtnNewButton_1_1ActionPerformed(ActionEvent e) {
+		EmployeeHour eh = new EmployeeHour();
+		eh.setVisible(true);
+		dispose();
 	}
+
 }
