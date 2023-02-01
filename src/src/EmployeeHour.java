@@ -13,6 +13,7 @@ public class EmployeeHour extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JButton btnNewButton_1_1;
+	private JButton btnNewButton_2_1;
 
 	/**
 	 * Launch the application.
@@ -34,7 +35,7 @@ public class EmployeeHour extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public EmployeeHour() {
-		setTitle("Mensual");
+		setTitle("Hora");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -54,34 +55,44 @@ public class EmployeeHour extends JFrame implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				ListHour lh = new ListHour();
 				lh.setVisible(true);
+				lh.setLocationRelativeTo(null);
 				dispose();
 				}
 		});
-		btnNewButton_1.setBounds(33, 145, 369, 43);
+		btnNewButton_1.setBounds(33, 140, 369, 43);
 		contentPane_1.add(btnNewButton_1);
 		
 		JButton button = new JButton("New button");
 		button.setBounds(0, 11, 36, -3);
 		contentPane_1.add(button);
 		
-		JButton btnNewButton_2 = new JButton("Volver");
+		JButton btnNewButton_2 = new JButton("⬅");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Principal p = new Principal();
 				p.setVisible(true);
+				p.setLocationRelativeTo(null);
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(10, 11, 63, 23);
+		btnNewButton_2.setBounds(10, 11, 55, 23);
 		contentPane_1.add(btnNewButton_2);
 		
 		btnNewButton_1_1 = new JButton("Agregar  Empleado Hora");
 		btnNewButton_1_1.addActionListener(this);
-		btnNewButton_1_1.setBounds(33, 56, 369, 43);
+		btnNewButton_1_1.setBounds(33, 60, 369, 43);
 		contentPane_1.add(btnNewButton_1_1);
+		
+		btnNewButton_2_1 = new JButton("Salir");
+		btnNewButton_2_1.addActionListener(this);
+		btnNewButton_2_1.setBounds(361, 227, 63, 23);
+		contentPane_1.add(btnNewButton_2_1);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_2_1) {
+			handleBtnNewButton_2_1ActionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton_1_1) {
 			handleBtnNewButton_1_1ActionPerformed(e);
 		}
@@ -89,7 +100,11 @@ public class EmployeeHour extends JFrame implements ActionListener {
 	protected void handleBtnNewButton_1_1ActionPerformed(ActionEvent e) {
 		DataHour d = new DataHour();
 		d.setVisible(true);
+		d.setLocationRelativeTo(null);
 		dispose();
 	}
 
+	protected void handleBtnNewButton_2_1ActionPerformed(ActionEvent e) {
+		System.exit(EXIT_ON_CLOSE);
+	}
 }

@@ -20,6 +20,9 @@ public class ListMonth extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JButton btnNewButton;
+	private JButton btnAgregarALa;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Launch the application.
@@ -97,19 +100,50 @@ public class ListMonth extends JFrame implements ActionListener {
 		table.getColumnModel().getColumn(6).setPreferredWidth(80);
 		scrollPane.setViewportView(table);
 		
-		JLabel lblNewLabel = new JLabel("Datos de Empleados por Mes");
+		JLabel lblNewLabel = new JLabel("Lista de Empleados por Mes");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblNewLabel.setBounds(344, 11, 671, 41);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton_2 = new JButton("⬅");
-		btnNewButton_2.setBounds(10, 11, 58, 23);
+		btnNewButton = new JButton("⬅");
+		btnNewButton.addActionListener(this);
+		btnNewButton.setBounds(10, 11, 55, 23);
+		contentPane.add(btnNewButton);
+		
+		btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.addActionListener(this);
+		btnNewButton_2.setBounds(976, 447, 63, 23);
 		contentPane.add(btnNewButton_2);
 		
-		JButton btnNewButton_2_1 = new JButton("Salir");
-		btnNewButton_2_1.setBounds(955, 447, 84, 23);
-		contentPane.add(btnNewButton_2_1);
+		btnAgregarALa = new JButton("Agregar a la lista");
+		btnAgregarALa.addActionListener(this);
+		btnAgregarALa.setBounds(821, 447, 145, 23);
+		contentPane.add(btnAgregarALa);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_2) {
+			handleBtnNewButton_2_1ActionPerformed(e);
+		}
+		if (e.getSource() == btnAgregarALa) {
+			handleBtnAgregarALaActionPerformed(e);
+		}
+		if (e.getSource() == btnNewButton) {
+			handleBtnNewButton_2ActionPerformed(e);
+		}
+	}
+	protected void handleBtnNewButton_2ActionPerformed(ActionEvent e) {
+		EmployeeMonth em = new EmployeeMonth();
+		em.setVisible(true);
+		em.setLocationRelativeTo(null);
+		dispose();
+	}
+	protected void handleBtnAgregarALaActionPerformed(ActionEvent e) {
+		DataMonth em = new DataMonth();
+		em.setVisible(true);
+		em.setLocationRelativeTo(null);
+		dispose();
+	}
+	protected void handleBtnNewButton_2_1ActionPerformed(ActionEvent e) {
+		System.exit(EXIT_ON_CLOSE);
 	}
 }
