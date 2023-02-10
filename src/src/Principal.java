@@ -50,9 +50,9 @@ public class Principal extends JFrame implements ActionListener {
 		JButton btnNewButton_1 = new JButton(" Empleado por Mes");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EmployeeMonth em = new EmployeeMonth();
-				em.setVisible(true);
-				em.setLocationRelativeTo(null);
+				ListMonth lm = new ListMonth();
+				lm.setVisible(true);
+				lm.setLocationRelativeTo(null);
 				dispose();
 			}
 		});
@@ -91,9 +91,9 @@ public class Principal extends JFrame implements ActionListener {
 		}
 	}
 	protected void handleBtnNewButton_1_1ActionPerformed(ActionEvent e) {
-		EmployeeHour eh = new EmployeeHour();
-		eh.setVisible(true);
-		eh.setLocationRelativeTo(null);
+		ListHour lh = new ListHour();
+		lh.setVisible(true);
+		lh.setLocationRelativeTo(null);
 		dispose();
 	}
 

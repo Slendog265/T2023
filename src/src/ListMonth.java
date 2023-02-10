@@ -6,14 +6,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
-import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.border.BevelBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
-import java.util.Vector;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -23,7 +22,6 @@ public class ListMonth extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JTable monthTable;
 	private JButton btnNewButton;
-	private JButton btnAgregarALa;
 	private JButton btnNewButton_2;
 	private JTextField idTxt;
 	private JTextField namesTxt;
@@ -31,6 +29,8 @@ public class ListMonth extends JFrame implements ActionListener {
 	private JTextField minimunWage;
 	private JButton guardarBtn;
 	DefaultTableModel model;
+	private JButton brrT;
+	private JButton brrBtn;
 	
 
 	/**
@@ -104,11 +104,6 @@ public class ListMonth extends JFrame implements ActionListener {
 		btnNewButton_2.setBounds(976, 447, 63, 23);
 		contentPane.add(btnNewButton_2);
 		
-		btnAgregarALa = new JButton("Agregar a la lista");
-		btnAgregarALa.addActionListener(this);
-		btnAgregarALa.setBounds(821, 447, 145, 23);
-		contentPane.add(btnAgregarALa);
-		
 		JLabel lblNewLabel_1 = new JLabel("ID");
 		lblNewLabel_1.setBounds(10, 62, 92, 14);
 		contentPane.add(lblNewLabel_1);
@@ -147,39 +142,75 @@ public class ListMonth extends JFrame implements ActionListener {
 		
 		guardarBtn = new JButton("Guardar");
 		guardarBtn.addActionListener(this);
-		guardarBtn.setBounds(501, 83, 89, 23);
+		guardarBtn.setBounds(501, 83, 128, 23);
 		contentPane.add(guardarBtn);
+		
+		brrT = new JButton("Borrar Todo");
+		brrT.addActionListener(this);
+		brrT.setBounds(501, 141, 128, 23);
+		contentPane.add(brrT);
+		
+		brrBtn = new JButton("Borrar Datos");
+		brrBtn.addActionListener(this);
+		brrBtn.setBounds(501, 115, 128, 23);
+		contentPane.add(brrBtn);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == brrBtn) {
+			brrAction(e);
+		}
+		if (e.getSource() == brrT) {
+			brrTAction(e);
+		}
 		if (e.getSource() == guardarBtn) {
 			handleBtnNewButton_1ActionPerformed(e);
 		}
 		if (e.getSource() == btnNewButton_2) {
 			handleBtnNewButton_2_1ActionPerformed(e);
 		}
-		if (e.getSource() == btnAgregarALa) {
-			handleBtnAgregarALaActionPerformed(e);
-		}
 		if (e.getSource() == btnNewButton) {
 			handleBtnNewButton_2ActionPerformed(e);
 		}
 	}
+	private void brrTAction(ActionEvent e) {
+		
+		int borrarT = monthTable.getRowCount();
+		
+		for(int j=borrarT-1;j>=0; j--) {
+			model.removeRow(j);
+		}
+		
+	}
+
+	private void brrAction(ActionEvent e) {
+		
+		int fila=monthTable.getSelectedRow();
+		if(fila>=0)
+		{
+			model.removeRow(fila);
+			JOptionPane.showMessageDialog(null, "Borrado de forma exitosa");
+			
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Error");
+		}
+		
+	}
+
 	protected void handleBtnNewButton_2ActionPerformed(ActionEvent e) {
-		EmployeeMonth em = new EmployeeMonth();
-		em.setVisible(true);
-		em.setLocationRelativeTo(null);
+		Principal p = new Principal();
+		p.setVisible(true);
+		p.setLocationRelativeTo(null);
 		dispose();
 	}
-	protected void handleBtnAgregarALaActionPerformed(ActionEvent e) {
-		DataMonth em = new DataMonth();
-		em.setVisible(true);
-		em.setLocationRelativeTo(null);
-		dispose();
-	}
+	
 	protected void handleBtnNewButton_2_1ActionPerformed(ActionEvent e) {
 		System.exit(EXIT_ON_CLOSE);
 	}
+	
 	protected void handleBtnNewButton_1ActionPerformed(ActionEvent e) {
+		
 		double SmD, IrM = 0, pApli,Dedud = 0, netSalry = 0, IA, INSS, BImpo, SAnual;
 		String ID = idTxt.getText();
 		String Name = namesTxt.getText();
