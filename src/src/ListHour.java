@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class ListHour extends JFrame implements ActionListener {
 
@@ -91,97 +93,119 @@ public class ListHour extends JFrame implements ActionListener {
 		scrollPane.setViewportView(HourTable);
 		
 		JLabel lblNewLabel = new JLabel("Lista de Empleados por Hora");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblNewLabel.setBounds(344, 11, 671, 41);
 		contentPane.add(lblNewLabel);
 		
 		btnNewButton = new JButton("⬅");
+		btnNewButton.setBackground(Color.GRAY);
 		btnNewButton.addActionListener(this);
 		btnNewButton.setBounds(10, 11, 55, 23);
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.setBackground(Color.RED);
+		btnNewButton_2.setForeground(Color.WHITE);
 		btnNewButton_2.addActionListener(this);
 		btnNewButton_2.setBounds(976, 447, 63, 23);
 		contentPane.add(btnNewButton_2);
 		
 		btnAgregarALa = new JButton("Guardar");
+		btnAgregarALa.setForeground(Color.WHITE);
+		btnAgregarALa.setBackground(Color.DARK_GRAY);
 		btnAgregarALa.addActionListener(this);
-		btnAgregarALa.setBounds(569, 136, 145, 23);
+		btnAgregarALa.setBounds(631, 63, 145, 23);
 		contentPane.add(btnAgregarALa);
 		
 		JLabel lblNewLabel_1 = new JLabel("ID");
-		lblNewLabel_1.setBounds(37, 59, 46, 14);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBounds(19, 63, 104, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombres");
-		lblNewLabel_2.setBounds(37, 99, 46, 14);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setBounds(19, 103, 104, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Apellidos");
-		lblNewLabel_3.setBounds(37, 140, 46, 14);
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setBounds(19, 144, 104, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Horas de Trabajo");
-		lblNewLabel_4.setBounds(19, 176, 83, 14);
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setBounds(19, 176, 104, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Horas Extras");
-		lblNewLabel_5.setBounds(19, 216, 83, 14);
+		lblNewLabel_5.setForeground(Color.WHITE);
+		lblNewLabel_5.setBounds(19, 216, 104, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Tarifa");
-		lblNewLabel_6.setBounds(331, 176, 46, 14);
+		lblNewLabel_6.setForeground(Color.WHITE);
+		lblNewLabel_6.setBounds(381, 63, 46, 14);
 		contentPane.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Tarifa Extra");
-		lblNewLabel_7.setBounds(331, 216, 74, 14);
+		lblNewLabel_7.setForeground(Color.WHITE);
+		lblNewLabel_7.setBounds(381, 103, 74, 14);
 		contentPane.add(lblNewLabel_7);
 		
 		idText = new JTextField();
-		idText.setBounds(93, 56, 68, 20);
+		idText.setBounds(133, 53, 68, 20);
 		contentPane.add(idText);
 		idText.setColumns(10);
 		
 		namesTxt = new JTextField();
-		namesTxt.setBounds(93, 96, 225, 20);
+		namesTxt.setBounds(133, 93, 225, 20);
 		contentPane.add(namesTxt);
 		namesTxt.setColumns(10);
 		
 		snamesTxt = new JTextField();
-		snamesTxt.setBounds(93, 137, 225, 20);
+		snamesTxt.setBounds(133, 134, 225, 20);
 		contentPane.add(snamesTxt);
 		snamesTxt.setColumns(10);
 		
 		hrTxt = new JTextField();
-		hrTxt.setBounds(112, 173, 125, 20);
+		hrTxt.setBounds(132, 170, 125, 20);
 		contentPane.add(hrTxt);
 		hrTxt.setColumns(10);
 		
 		xtrhTxt = new JTextField();
-		xtrhTxt.setBounds(112, 213, 125, 20);
+		xtrhTxt.setBounds(132, 210, 125, 20);
 		contentPane.add(xtrhTxt);
 		xtrhTxt.setColumns(10);
 		
 		tarTxt = new JTextField();
-		tarTxt.setBounds(401, 173, 125, 20);
+		tarTxt.setBounds(465, 60, 125, 20);
 		contentPane.add(tarTxt);
 		tarTxt.setColumns(10);
 		
 		xtrataTxt = new JTextField();
-		xtrataTxt.setBounds(401, 210, 125, 20);
+		xtrataTxt.setBounds(465, 93, 125, 20);
 		contentPane.add(xtrataTxt);
 		xtrataTxt.setColumns(10);
 		
 		borrarLinea = new JButton("Borrar Datos");
+		borrarLinea.setForeground(Color.WHITE);
+		borrarLinea.setBackground(Color.DARK_GRAY);
 		borrarLinea.addActionListener(this);
-		borrarLinea.setBounds(569, 167, 145, 23);
+		borrarLinea.setBounds(631, 94, 145, 23);
 		contentPane.add(borrarLinea);
 		
 		borrarTodo = new JButton("Borrar Todo");
+		borrarTodo.setBackground(Color.DARK_GRAY);
+		borrarTodo.setForeground(Color.WHITE);
 		borrarTodo.addActionListener(this);
-		borrarTodo.setBounds(569, 194, 145, 23);
+		borrarTodo.setBounds(631, 121, 145, 23);
 		contentPane.add(borrarTodo);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(ListHour.class.getResource("/themes/List2.jpg")));
+		lblNewLabel_8.setBounds(0, 0, 1049, 481);
+		contentPane.add(lblNewLabel_8);
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNewButton_2) {

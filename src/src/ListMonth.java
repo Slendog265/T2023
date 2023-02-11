@@ -16,6 +16,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class ListMonth extends JFrame implements ActionListener {
 
@@ -31,6 +33,7 @@ public class ListMonth extends JFrame implements ActionListener {
 	DefaultTableModel model;
 	private JButton brrT;
 	private JButton brrBtn;
+	private final JLabel lblNewLabel_2 = new JLabel("");
 	
 
 	/**
@@ -90,70 +93,88 @@ public class ListMonth extends JFrame implements ActionListener {
 		scrollPane.setViewportView(monthTable);
 		
 		JLabel lblNewLabel = new JLabel("Lista de Empleados por Mes");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblNewLabel.setBounds(344, 11, 671, 41);
 		contentPane.add(lblNewLabel);
 		
 		btnNewButton = new JButton("⬅");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(Color.GRAY);
 		btnNewButton.addActionListener(this);
 		btnNewButton.setBounds(10, 11, 55, 23);
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_2 = new JButton("Salir");
+		btnNewButton_2.setBackground(Color.RED);
+		btnNewButton_2.setForeground(Color.WHITE);
 		btnNewButton_2.addActionListener(this);
 		btnNewButton_2.setBounds(976, 447, 63, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("ID");
-		lblNewLabel_1.setBounds(10, 62, 92, 14);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBounds(10, 62, 105, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNombres = new JLabel("Nombres");
-		lblNombres.setBounds(10, 87, 92, 14);
+		lblNombres.setForeground(Color.WHITE);
+		lblNombres.setBounds(10, 87, 105, 14);
 		contentPane.add(lblNombres);
 		
 		JLabel lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setBounds(10, 119, 92, 14);
+		lblApellidos.setForeground(Color.WHITE);
+		lblApellidos.setBounds(10, 119, 105, 14);
 		contentPane.add(lblApellidos);
 		
 		JLabel lblHorasDeTrabajo = new JLabel("Salario Minimo");
-		lblHorasDeTrabajo.setBounds(10, 144, 92, 14);
+		lblHorasDeTrabajo.setForeground(Color.WHITE);
+		lblHorasDeTrabajo.setBounds(10, 144, 105, 14);
 		contentPane.add(lblHorasDeTrabajo);
 		
 		idTxt = new JTextField();
 		idTxt.setColumns(10);
-		idTxt.setBounds(80, 59, 48, 20);
+		idTxt.setBounds(125, 59, 48, 20);
 		contentPane.add(idTxt);
 		
 		namesTxt = new JTextField();
 		namesTxt.setColumns(10);
-		namesTxt.setBounds(80, 87, 365, 20);
+		namesTxt.setBounds(125, 87, 365, 20);
 		contentPane.add(namesTxt);
 		
 		snamesTxt = new JTextField();
 		snamesTxt.setColumns(10);
-		snamesTxt.setBounds(80, 112, 365, 20);
+		snamesTxt.setBounds(125, 112, 365, 20);
 		contentPane.add(snamesTxt);
 		
 		minimunWage = new JTextField();
 		minimunWage.setColumns(10);
-		minimunWage.setBounds(80, 144, 92, 20);
+		minimunWage.setBounds(125, 144, 92, 20);
 		contentPane.add(minimunWage);
 		
 		guardarBtn = new JButton("Guardar");
+		guardarBtn.setForeground(Color.WHITE);
+		guardarBtn.setBackground(Color.DARK_GRAY);
 		guardarBtn.addActionListener(this);
-		guardarBtn.setBounds(501, 83, 128, 23);
+		guardarBtn.setBounds(625, 83, 128, 23);
 		contentPane.add(guardarBtn);
 		
 		brrT = new JButton("Borrar Todo");
+		brrT.setBackground(Color.DARK_GRAY);
+		brrT.setForeground(Color.WHITE);
 		brrT.addActionListener(this);
-		brrT.setBounds(501, 141, 128, 23);
+		brrT.setBounds(625, 141, 128, 23);
 		contentPane.add(brrT);
 		
 		brrBtn = new JButton("Borrar Datos");
+		brrBtn.setForeground(Color.WHITE);
+		brrBtn.setBackground(Color.DARK_GRAY);
 		brrBtn.addActionListener(this);
-		brrBtn.setBounds(501, 115, 128, 23);
+		brrBtn.setBounds(625, 115, 128, 23);
 		contentPane.add(brrBtn);
+		lblNewLabel_2.setIcon(new ImageIcon(ListMonth.class.getResource("/themes/List1.jpg")));
+		lblNewLabel_2.setBounds(0, 0, 1226, 481);
+		contentPane.add(lblNewLabel_2);
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == brrBtn) {
